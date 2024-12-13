@@ -106,7 +106,7 @@ a {
 }
 @media screen and (min-width: 1158px) {
   .container {
-    width: 1158px;
+    max-width: 1158px;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -328,7 +328,7 @@ a {
     column-gap: 24px;
   }
   .service-item {
-    width: calc((100% - 24px) / 2);
+    width: calc((100% - 24px) / 2);  
   }
 }
 
@@ -346,17 +346,11 @@ a {
     justify-content: center;
   }
 
-  .service-item {
-    width: 264px;
-    text-align: center;
-  }
-
   .service-title {
     text-align: left;
     font-size: 20px;
     font-weight: 500;
     line-height: 24px;
-    letter-spacing: 2%;
     text-align: left;
   }
 
@@ -372,7 +366,7 @@ a {
 
 /* #endregion */
 
-/* #region Team*/
+
 .team {
   background-color: var(--cloud-color);
   padding: 120px 0;
@@ -391,12 +385,12 @@ a {
 
 .team-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap; /* Enables wrapping */
+  gap: 24px; /* Adds space between rows and columns */
 }
 
 .team-member {
-  background-color: var(--white-text-color);
-  flex-basis: calc((100% - 3 * 24px) / 4);
+  background-color: var(--white-text-color); 
   border-radius: 0px 0px 4px 4px;
   text-align: center;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -455,7 +449,26 @@ a {
   fill: var(--white-text-color);
 }
 
-/* #endregion */
+@media screen and (min-width: 768px) {
+  .team-list {
+    row-gap: 24px;
+  }
+
+  .team-member {
+    flex-basis: calc((100% - 24px) / 2); /* 2 items per row */
+  }
+  .team-member > img{
+    object-fit: fill;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .team-member {
+    flex-basis: calc((100% - 3 * 24px) / 4); /* 4 items per row */
+  }
+}
+
+
 
 /* #region Portfolio */
 .portfolio {
