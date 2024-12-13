@@ -269,6 +269,7 @@ a {
 
 .services-list {
   display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
@@ -284,7 +285,7 @@ a {
 }
 
 .service-item {
-  width: calc((100% - 72px) / 4);
+  /* width: calc((100% - 72px) / 4); */
   /* text-align: center; */
 }
 
